@@ -1,6 +1,5 @@
 #pragma once
 #include "robot.h"
-#include "ir_channel.h"
 #undef RGB
 
 #define ir 1
