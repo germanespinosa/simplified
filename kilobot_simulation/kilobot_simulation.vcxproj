@@ -84,8 +84,8 @@
     <IncludePath>.\glew-1.11.0\include;.\freeglut\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\German\Documents\GitHubVisualStudio\kilobot_simulation_optimized\kilobot_simulation\glew-1.11.0\include;C:\Users\German\Documents\GitHubVisualStudio\kilobot_simulation_optimized\kilobot_simulation\freeglut\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\German\Documents\GitHubVisualStudio\kilobot_simulation_optimized\kilobot_simulation\glew-1.11.0\lib;C:\Users\German\Documents\GitHubVisualStudio\kilobot_simulation_optimized\kilobot_simulation\freeglut\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>.\glew-1.11.0\include;.\freeglut\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\glew-1.11.0\lib;.\freeglut\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
