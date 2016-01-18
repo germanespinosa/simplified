@@ -26,6 +26,7 @@ void robot::robot_controller()
 		color[0] = .3;
 		color[1] = .3;
 		color[1] = .3;
+		tx_request = 0;
 	}
 }
 

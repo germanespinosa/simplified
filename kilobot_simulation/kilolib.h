@@ -62,7 +62,9 @@ public:
 
 	void robot::init()
 	{
-		battery = radius * 60 * 60 * 2 + gauss_rand(rand()) * 60 * 60;
+		// radius is one sec (kb move at half bodylenght a sec)
+		double two_hours = radius * 60 * 60 * 2;
+		battery = (1 + gauss_rand(rand())/5) * two_hours;
 		setup();
 	}
 

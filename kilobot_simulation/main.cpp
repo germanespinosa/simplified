@@ -29,7 +29,7 @@ using namespace std;
 double time_sim;  //simulation time
 double zoom, view_x, view_y; //var. for zoom and scroll
 
-int num_robots = 1005; //number of robots running
+int num_robots = 1000; //number of robots running
 int num_smart_robots = 5; //number of robots running
 
 robot** robots;//creates an array of robots
