@@ -41,6 +41,21 @@ public:
 		return c;
 	}
 
+	void rand_seed(char seed)
+	{
+
+	}
+
+	char rand_soft()
+	{
+		return rand() * 255 / RAND_MAX;
+	}
+
+	char rand_hard()
+	{
+		return rand() * 255 / RAND_MAX;
+	}
+
 	unsigned char message_crc(message_t *m)
 	{
 		int crc = 0;
@@ -73,6 +88,16 @@ public:
 
 	void robot::controller()
 	{
+		//if (pos[0] > 1000 && pos[0] < 1005 && pos[1]>1000 && pos[1] < 1005)
+		//{
+		//	distance_measurement = 35;
+		//	message_t m;
+		//	m.data[0] = 1;
+		//	m.data[1] = 5;
+		//	m.data[2] = 10;
+		//	m.data[3] = 1;
+		//	message_rx(&m, &distance_measurement);
+		//}
 		if (message_sent)
 		{
 			tx_request = 0;
