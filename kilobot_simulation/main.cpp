@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include "kilobot.cpp"
+#include "basic_robot.cpp"
 
 
 #define SIMPLEBMP_OPENGL 
@@ -29,8 +29,7 @@ using namespace std;
 double time_sim;  //simulation time
 double zoom, view_x, view_y; //var. for zoom and scroll
 
-int num_robots = 1000; //number of robots running
-int num_smart_robots = 5; //number of robots running
+int num_robots = 1; //number of robots running
 
 robot** robots;//creates an array of robots
 int* safe_distance;
@@ -166,7 +165,7 @@ bool run_simulation_step()
 	static int lastrun = 0;
 	lastrun++;
 
-	total_secs = lastrun / radius;
+	total_secs = lastrun / second;
 
 	int secs = total_secs % 60;
 	int mins = (total_secs / 60) % 60;
@@ -463,7 +462,7 @@ void setup_positions()
 		int x = c * horizontal_separation + hr;
 		int vr = rand() % (vertical_separation / 2) + vertical_separation / 4;
 		int y = r * vertical_separation + vr;
-		robots[k] = new mykilobot();
+		robots[k] = new basic_robot();
 		double t = rand() * 2 * PI / RAND_MAX;
 		robots[k]->robot_init(x, y, t);
 		k++;
@@ -478,10 +477,6 @@ int main(int argc, char **argv)
 		if (strcmp(argv[i],"/r")==0)
 		{
 			num_robots = stoi(argv[i + 1]);
-		}
-		if (strcmp(argv[i], "/s") == 0)
-		{
-			num_smart_robots = stoi(argv[i + 1]);
 		}
 		if (strcmp(argv[i], "/l") == 0)
 		{

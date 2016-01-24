@@ -35,7 +35,6 @@ class mykilobot : public kilobot
 		
 	}
 
-
 	message_t *mykilobot::message_tx()
 	{
 		static int count = rand();

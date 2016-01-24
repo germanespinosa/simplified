@@ -13,6 +13,7 @@
 #define X 0
 #define Y 1
 #define T 2
+#define second 32
 
 class robot
 {
@@ -48,7 +49,7 @@ public:
 
 	virtual void *get_message() = 0;
 
-	double speed=1;
+	double speed=.5;
 
 	double battery = -1;
 

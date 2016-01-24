@@ -26,6 +26,7 @@ public:
 	int kilo_turn_left = 50;
 	int turn_right=0;
 	int turn_left=0;
+	int kilo_ticks = 0;
 
 	double distance_measurement;
 	bool message_sent = false;
@@ -46,12 +47,12 @@ public:
 
 	}
 
-	char rand_soft()
+	unsigned char rand_soft()
 	{
 		return rand() * 255 / RAND_MAX;
 	}
 
-	char rand_hard()
+	unsigned char rand_hard()
 	{
 		return rand() * 255 / RAND_MAX;
 	}
@@ -77,8 +78,7 @@ public:
 
 	void robot::init()
 	{
-		// radius is one sec (kb move at half bodylenght a sec)
-		double two_hours = radius * 60 * 60 * 2;
+		double two_hours = second * 60 * 60 * 2;
 		battery = (1 + gauss_rand(rand())/5) * two_hours;
 		setup();
 	}
@@ -104,6 +104,7 @@ public:
 			message_sent = false;
 			message_tx_success();
 		}
+		kilo_ticks ++;
 		this->loop();
 		motor_command = 4;
 		if (right_ready && turn_right == kilo_turn_right)

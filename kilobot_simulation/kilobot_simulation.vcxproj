@@ -24,6 +24,7 @@
     <ClInclude Include="simplebmp.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="basic_robot.cpp" />
     <ClCompile Include="kilobot.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="robot.cpp" />
