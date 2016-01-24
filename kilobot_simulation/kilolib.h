@@ -105,6 +105,14 @@ public:
 			message_tx_success();
 		}
 		kilo_ticks ++;
+		int rand_tick = rand();
+		if (rand_tick < RAND_MAX * .1)
+		{
+			if (rand_tick < RAND_MAX * .05)
+				kilo_ticks--;
+			else
+				kilo_ticks++;
+		}
 		this->loop();
 		motor_command = 4;
 		if (right_ready && turn_right == kilo_turn_right)
