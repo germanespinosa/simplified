@@ -1,12 +1,10 @@
 #pragma once
-#include <Windows.h>
 #include <GL\glew.h>
 #include <GL\freeglut.h>
 #include <iostream>
 #include <string>
 #include <time.h>
-#include "basic_robot.cpp"
-
+#include "kilobot.cpp"
 
 #define SIMPLEBMP_OPENGL 
 #include "simplebmp.h"
@@ -29,7 +27,7 @@ using namespace std;
 double time_sim;  //simulation time
 double zoom, view_x, view_y; //var. for zoom and scroll
 
-int num_robots = 1; //number of robots running
+int num_robots = 100; //number of robots running
 
 robot** robots;//creates an array of robots
 int* safe_distance;
@@ -462,7 +460,7 @@ void setup_positions()
 		int x = c * horizontal_separation + hr;
 		int vr = rand() % (vertical_separation / 2) + vertical_separation / 4;
 		int y = r * vertical_separation + vr;
-		robots[k] = new basic_robot();
+		robots[k] = new mykilobot();
 		double t = rand() * 2 * PI / RAND_MAX;
 		robots[k]->robot_init(x, y, t);
 		k++;
